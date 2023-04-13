@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head.ejs") %>
+        <title>Редактировать блог</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-logo">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+
+        </div>
+        <div class="header-search">
+            <div class="input-div"><input type="text" placeholder="Поиск по блогам"></div>
+
+            <div class="btn-div"><button><img src="/images/icons/search.png" alt="">Найти</button></div>
+        </div>
+        <div class="header-profile-img">
+            <img src="images/avatar.png" alt="">
+        </div>
+    </header>
+    <div class="container">
+        <div class="main">
+            <div class="new">
+                <form class="form" action="">
+                    <div class="left-heading">
+                        Редактировать блог
+                    </div>
+
+                    <input type="text" placeholder="Введите заголовок блога" name="blog_title">
+                    <select name="category" id="">
+                        <option value="" disabled selected>Выберите категорию</option>
+                        <%categories.forEach(category=> { %>
+                            <option value="">
+                                <%= category.name %>
+                            </option>
+
+                            <%})%>
+                    </select>
+                    <label class="file-upload"><input type="file">Выберите картинку</label>
+
+
+                    <textarea name="blog_description" id="" cols="30" rows="10"
+                        placeholder="Введите описание блога"></textarea>
+                    <button type="submit">Сохранить</button>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
